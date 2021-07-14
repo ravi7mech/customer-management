@@ -1,0 +1,45 @@
+{
+  "name": "CustCommunicationRef",
+  "fields": [
+    {
+      "fieldName": "customerNotificationId",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "role",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "status",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "customerId",
+      "fieldType": "Long",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "customer",
+      "otherEntityRelationshipName": "custCommunicationRef",
+      "relationshipName": "customer"
+    }
+  ],
+  "entityTableName": "cust_communication_ref",
+  "dto": "mapstruct",
+  "pagination": "no",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": true,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "microserviceName": "CustomerManagement",
+  "clientRootFolder": "CustomerManagement",
+  "databaseType": "sql",
+  "changelogDate": "20210714071838"
+}

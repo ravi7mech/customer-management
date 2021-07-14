@@ -1,0 +1,51 @@
+{
+  "name": "NewsLetterType",
+  "fields": [
+    {
+      "fieldName": "newLetterType",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "displayValue",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "description",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "status",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "custNewsLetterConfig",
+      "otherEntityRelationshipName": "newsLetterType",
+      "relationshipName": "custNewsLetterConfig"
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "indNewsLetterConf",
+      "otherEntityRelationshipName": "newsLetterType",
+      "relationshipName": "indNewsLetterConf"
+    }
+  ],
+  "entityTableName": "news_letter_type",
+  "dto": "mapstruct",
+  "pagination": "no",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": true,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "microserviceName": "CustomerManagement",
+  "clientRootFolder": "CustomerManagement",
+  "databaseType": "sql",
+  "changelogDate": "20210714071900"
+}

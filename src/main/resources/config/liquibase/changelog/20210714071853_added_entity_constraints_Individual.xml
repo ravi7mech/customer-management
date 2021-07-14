@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.3.xsd">
+    <!--
+        Added the constraints for entity Individual.
+    -->
+    <changeSet id="20210714071853-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="ind_activation_id"
+                                 baseTableName="individual"
+                                 constraintName="fk_individual__ind_activation_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="ind_activation"/>
+
+        <addForeignKeyConstraint baseColumnNames="ind_news_letter_conf_id"
+                                 baseTableName="individual"
+                                 constraintName="fk_individual__ind_news_letter_conf_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="ind_news_letter_conf"/>
+    </changeSet>
+</databaseChangeLog>

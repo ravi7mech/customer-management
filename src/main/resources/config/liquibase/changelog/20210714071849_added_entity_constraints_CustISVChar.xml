@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.3.xsd">
+    <!--
+        Added the constraints for entity CustISVChar.
+    -->
+    <changeSet id="20210714071849-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="custisvref_id"
+                                 baseTableName="cust_isv_char"
+                                 constraintName="fk_cust_isv_char__custisvref_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="cust_isv_ref"/>
+    </changeSet>
+</databaseChangeLog>

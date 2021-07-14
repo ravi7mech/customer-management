@@ -1,0 +1,42 @@
+{
+  "name": "GeographicSiteRef",
+  "fields": [
+    {
+      "fieldName": "siteRef",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "location",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "custConId",
+      "fieldType": "Long",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "custContact",
+      "otherEntityRelationshipName": "geographicSiteRef",
+      "relationshipName": "custContact",
+      "ownerSide": false
+    }
+  ],
+  "entityTableName": "geographic_site_ref",
+  "dto": "mapstruct",
+  "pagination": "no",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": true,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "microserviceName": "CustomerManagement",
+  "clientRootFolder": "CustomerManagement",
+  "databaseType": "sql",
+  "changelogDate": "20210714071847"
+}

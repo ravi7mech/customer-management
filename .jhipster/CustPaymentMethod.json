@@ -1,0 +1,76 @@
+{
+  "name": "CustPaymentMethod",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "description",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "preferred",
+      "fieldType": "Boolean",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "type",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "authorizationCode",
+      "fieldType": "Integer",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "status",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "statusDate",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "details",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "customerId",
+      "fieldType": "Long",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "bankCardType",
+      "otherEntityRelationshipName": "custPaymentMethod",
+      "relationshipName": "bankCardType"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "custBillingRef",
+      "otherEntityRelationshipName": "custPaymentMethod",
+      "relationshipName": "custBillingRef"
+    }
+  ],
+  "entityTableName": "cust_payment_method",
+  "dto": "mapstruct",
+  "pagination": "no",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": true,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "microserviceName": "CustomerManagement",
+  "clientRootFolder": "CustomerManagement",
+  "databaseType": "sql",
+  "changelogDate": "20210714071844"
+}
