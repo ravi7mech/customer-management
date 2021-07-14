@@ -1,0 +1,57 @@
+{
+  "name": "IndContact",
+  "fields": [
+    {
+      "fieldName": "preferred",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "type",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "validFrom",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "validTo",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "individualId",
+      "fieldType": "Long",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "indContactChar",
+      "otherEntityRelationshipName": "indContact",
+      "relationshipName": "indContactChar"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "individual",
+      "otherEntityRelationshipName": "indContact",
+      "relationshipName": "individual"
+    }
+  ],
+  "entityTableName": "ind_contact",
+  "dto": "mapstruct",
+  "pagination": "no",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": true,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "microserviceName": "CustomerManagement",
+  "clientRootFolder": "CustomerManagement",
+  "databaseType": "sql",
+  "changelogDate": "20210714071855"
+}

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.3.xsd">
+    <!--
+        Added the constraints for entity CustRelParty.
+    -->
+    <changeSet id="20210714071851-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="customer_id"
+                                 baseTableName="cust_rel_party"
+                                 constraintName="fk_cust_rel_party__customer_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="customer"/>
+
+        <addForeignKeyConstraint baseColumnNames="department_id"
+                                 baseTableName="cust_rel_party"
+                                 constraintName="fk_cust_rel_party__department_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="department"/>
+
+        <addForeignKeyConstraint baseColumnNames="role_type_ref_id"
+                                 baseTableName="cust_rel_party"
+                                 constraintName="fk_cust_rel_party__role_type_ref_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="role_type_ref"/>
+
+        <addForeignKeyConstraint baseColumnNames="individual_id"
+                                 baseTableName="cust_rel_party"
+                                 constraintName="fk_cust_rel_party__individual_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="individual"/>
+    </changeSet>
+</databaseChangeLog>

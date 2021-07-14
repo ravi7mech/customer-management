@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.3.xsd">
+    <!--
+        Added the constraints for entity ShoppingSessionRef.
+    -->
+    <changeSet id="20210714071852-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="customer_id"
+                                 baseTableName="shopping_session_ref"
+                                 constraintName="fk_shopping_session_ref__customer_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="customer"/>
+
+        <addForeignKeyConstraint baseColumnNames="individual_id"
+                                 baseTableName="shopping_session_ref"
+                                 constraintName="fk_shopping_session_ref__individual_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="individual"/>
+    </changeSet>
+</databaseChangeLog>

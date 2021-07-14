@@ -1,0 +1,111 @@
+{
+  "name": "Individual",
+  "fields": [
+    {
+      "fieldName": "title",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "firstName",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "lastName",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "middleName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "formattedName",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "dateOfBirth",
+      "fieldType": "LocalDate",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "gender",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "maritalStatus",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "nationality",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "status",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "indActivation",
+      "otherEntityRelationshipName": "individual",
+      "relationshipName": "indActivation",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "indNewsLetterConf",
+      "otherEntityRelationshipName": "individual",
+      "relationshipName": "indNewsLetterConf",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "indContact",
+      "otherEntityRelationshipName": "individual",
+      "relationshipName": "indContact"
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "indChar",
+      "otherEntityRelationshipName": "individual",
+      "relationshipName": "indChar"
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "indAuditTrial",
+      "otherEntityRelationshipName": "individual",
+      "relationshipName": "indAuditTrial"
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "custRelParty",
+      "otherEntityRelationshipName": "individual",
+      "relationshipName": "custRelParty"
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "shoppingSessionRef",
+      "otherEntityRelationshipName": "individual",
+      "relationshipName": "shoppingSessionRef"
+    }
+  ],
+  "entityTableName": "individual",
+  "dto": "mapstruct",
+  "pagination": "no",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": true,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "microserviceName": "CustomerManagement",
+  "clientRootFolder": "CustomerManagement",
+  "databaseType": "sql",
+  "changelogDate": "20210714071853"
+}

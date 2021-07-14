@@ -1,0 +1,48 @@
+{
+  "name": "IndNewsLetterConf",
+  "fields": [
+    {
+      "fieldName": "newLetterTypeId",
+      "fieldType": "Long",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "value",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "individualId",
+      "fieldType": "Long",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "individual",
+      "otherEntityRelationshipName": "indNewsLetterConf",
+      "relationshipName": "individual",
+      "ownerSide": false
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "newsLetterType",
+      "otherEntityRelationshipName": "indNewsLetterConf",
+      "relationshipName": "newsLetterType"
+    }
+  ],
+  "entityTableName": "ind_news_letter_conf",
+  "dto": "mapstruct",
+  "pagination": "no",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": true,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "microserviceName": "CustomerManagement",
+  "clientRootFolder": "CustomerManagement",
+  "databaseType": "sql",
+  "changelogDate": "20210714071903"
+}
